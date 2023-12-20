@@ -1,0 +1,19 @@
+{% extends "nav.html" %}
+{% block start %}
+<style>
+    .custom-top-margin {
+        margin-top: 160px; 
+    }
+</style>
+
+<div class="container  custom-top-margin">
+    <div class="jumbotron text-white">
+        <h1 class="display-4">Welcome to CookBook.</h1>
+        <p class="lead">Embark on a culinary journey with CookBook, where flavors come to life and creativity knows no bounds.</p>
+        <p>Explore a world of mouth-watering recipes crafted by passionate chefs and cooking enthusiasts.</p>
+        <p class="lead">
+            <a class="btn btn-success btn-lg" href="{{'/recepies/list/'}}" role="button">Start Cooking</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

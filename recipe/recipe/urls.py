@@ -16,7 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from vege.views import *
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns, settings, static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home, name = "home"),
+    path('recepies/', receipes, name="recepies"),
+    path('delete-receipe/<int:id>/', delete_receipe, name = "delete_receipe"),
+    path('recepies/list/', list_recipe, name = "list_recipe"),
+    path('recepies/list/<int:id>/', list_detail, name = "list_detail")
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root = settings.MEDIA_ROOT)
+
+
+urlpatterns += staticfiles_urlpatterns()
